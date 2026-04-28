@@ -13,8 +13,8 @@ load_dotenv()
 # ─────────────────────────────────────────────
 # CONFIGURAZIONE
 # ─────────────────────────────────────────────
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-DB_NAME        = os.getenv("DB_NAME", "chat_logs.db")
+OPENAI_API_KEY = st.secrets.get("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
+DB_NAME        = st.secrets.get("DB_NAME") or os.getenv("DB_NAME", "chat_logs.db")
 
 # ─────────────────────────────────────────────
 # MODELLO
